@@ -1,0 +1,117 @@
+/* Cleaned and consolidated stylesheet for the portfolio
+   - removed repeated rules
+   - combined responsive adjustments into one media query
+*/
+
+/* Base */
+body {
+    margin: 0;
+    background-color: #545454;
+    color: #e8e8e8;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+a { color: inherit; text-decoration: underline; }
+
+/* Layout container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #050505;
+    margin: 20px auto;
+    border-radius: 20px;
+
+}
+
+/* Sections */
+.section { margin: 40px 0; }
+.section p { line-height: 1.6; }
+.section strong { color: #00f030; }
+
+/* Headings */
+h2 {
+    border-left: 4px solid #00f030;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    width: fit-content;
+    text-align: left;
+    color: #00f030;
+}
+
+/* Hero */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px auto;
+}
+.hero .image { flex: 1; }
+.hero .info { flex: 2; text-align: left; }
+.hero h1 { font-size: 2.5em; margin: 0; }
+.hero .role { font-size: 1.2em; color: #00f030; margin: 10px 0; }
+.hero .stack { font-size: 1em; color: #888; margin: 5px 0 20px 0; }
+
+.profile-photo {
+    border: 1px solid #ccc;
+    width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 20px;
+}
+
+/* Projects / Cards */
+.projects {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    justify-content: space-between;
+}
+.card {
+    background-color: #888;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    width: 100%;
+    padding: 10px 30px;
+    margin: 10px auto;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.card:hover {
+    border-color: #00f030;
+    box-shadow: 0 0 10px #00f030;
+    transform: translateY(-5px);
+}
+.card:active {
+    transform: translateY(0);
+    box-shadow: inset #00f030 0px 0px 5px;
+}
+
+.hobbies { margin-top: 10px; font-style: italic; color: #ccc; }
+
+/* Contact form */
+.contact-form { display: flex; flex-direction: column; }
+.contact-form label { margin-bottom: 5px; }
+.contact-form input,
+.contact-form textarea {
+    padding: 10px 30px; text-align: center; margin-bottom: 15px;
+    border: 1px solid #ccc; border-radius: 30px; font-size: 1em;
+}
+.contact-form button {
+    padding: 10px 30px; background-color: #00f030; color: #fff; border: none; border-radius: 30px;
+    font-size: 1em; cursor: pointer;
+}
+.contact-form button:hover { background-color: #00c020; }
+.contact-form button:active { background-color: #009010; }
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .hero { flex-direction: column; }
+    .hero .info { text-align: center; }
+    .hero h1 { font-size: 2em; }
+    .hero .role { font-size: 1em; }
+    .hero .stack { font-size: 0.9em; }
+    .projects { flex-direction: column; gap: 15px; }
+    .card { padding: 10px 20px; transform: none; }
+}
+
